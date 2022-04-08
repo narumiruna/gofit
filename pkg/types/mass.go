@@ -1,5 +1,7 @@
 package types
 
+import "fmt"
+
 type Mass Unit
 
 const (
@@ -10,6 +12,10 @@ const (
 
 	Pound Mass = KiloGram * 0.45359237
 )
+
+func (m Mass) String() string {
+	return fmt.Sprintf("%v kg", m.Float64()/KiloGram.Float64())
+}
 
 func (m Mass) Float64() float64 {
 	return float64(m)
