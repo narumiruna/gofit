@@ -3,8 +3,9 @@ package types
 import "fmt"
 
 type Exercise struct {
-	Name      string
-	Equipment Equipment
+	Name          string
+	Equipment     Equipment
+	WorkedMuscles []Muscle
 }
 
 func NewExercise(name string, equipment Equipment) Exercise {
