@@ -2,10 +2,13 @@ package types
 
 type SetSlice []Set
 
-func (s SetSlice) Volume() Mass {
-	sum := ZeroMass
+func (s SetSlice) Volumes() (o MassSlice) {
 	for _, set := range s {
-		sum += set.Volume()
+		o = append(o, set.Volume())
 	}
-	return sum
+	return o
+}
+
+func (s SetSlice) Volume() Mass {
+	return Mass(s.Volumes().ToFloats().Sum())
 }

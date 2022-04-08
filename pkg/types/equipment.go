@@ -1,6 +1,6 @@
 package types
 
 type Equipment struct {
-	Name   string
-	Weight Mass
+	Name string
+	Mass Mass
 }
