@@ -21,17 +21,25 @@ func (m Mass) Float64() float64 {
 	return float64(m)
 }
 func (m Mass) AddInt(x int64) Mass {
-	return Mass(float64(x) + m.Float64())
+	return Mass(m.Float64() + float64(x))
 }
 
 func (m Mass) AddFloat(x float64) Mass {
-	return Mass(float64(x) + m.Float64())
+	return Mass(m.Float64() + float64(x))
 }
 
 func (m Mass) MulInt(x int64) Mass {
-	return Mass(float64(x) * m.Float64())
+	return Mass(m.Float64() * float64(x))
 }
 
 func (m Mass) MulFloat(x float64) Mass {
-	return Mass(float64(x) * m.Float64())
+	return Mass(m.Float64() * float64(x))
+}
+
+func (m Mass) DivInt(x int64) Mass {
+	return Mass(m.Float64() / float64(x))
+}
+
+func (m Mass) DivFloat(x float64) Mass {
+	return Mass(m.Float64() / float64(x))
 }
