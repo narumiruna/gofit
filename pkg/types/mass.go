@@ -14,7 +14,7 @@ const (
 )
 
 func (m Mass) String() string {
-	return fmt.Sprintf("%v kg", m.Float64()/KiloGram.Float64())
+	return fmt.Sprintf("%.2f kg", m.Float64()/KiloGram.Float64())
 }
 
 func (m Mass) Float64() float64 {
